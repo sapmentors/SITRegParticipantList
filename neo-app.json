@@ -40,9 +40,9 @@
       "path": "/destinations/HANAMDC",
       "target": {
         "type": "destination",
-        "name": "HANAMDC"
+        "name": "HANAMDC_PUBLIC"
       },
-      "description": "HANA MDC XS"
+      "description": "HANA MDC XS Public"
     }
   ],
   "authenticationMethod": "none",
