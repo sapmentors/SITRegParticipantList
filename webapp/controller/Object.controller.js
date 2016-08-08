@@ -29,10 +29,17 @@ sap.ui.define([
 				// detail page is busy indication immediately so there is no break in
 				// between the busy indication for loading the view's meta data
 				var iOriginalBusyDelay,
+					iOriginalBusyDelay,
+					oTable = this.byId("table"),
 					oViewModel = new JSONModel({
 						busy : true,
 						delay : 0
 					});
+
+				iOriginalBusyDelay = oTable.getBusyIndicatorDelay();
+				this._oTable = oTable;
+				// keeps the search state
+				this._oTableSearchState = [];
 
 				this.getRouter().getRoute("object").attachPatternMatched(this._onObjectMatched, this);
 
@@ -66,7 +73,14 @@ sap.ui.define([
 					this.getRouter().navTo("worklist", {}, true);
 				}
 			},
-
+			/**
+			 * Event handler for refresh event. Keeps filter, sort
+			 * and group settings and refreshes the list binding.
+			 * @public
+			 */
+			onRefresh : function () {
+				this._oTable.getBinding("items").refresh();
+			},
 			/* =========================================================== */
 			/* internal methods                                            */
 			/* =========================================================== */

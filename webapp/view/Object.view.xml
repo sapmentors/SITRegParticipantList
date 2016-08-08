@@ -13,6 +13,7 @@
 		busyIndicatorDelay="{objectView>/delay}">
 
 		<semantic:content>
+
 			<ObjectHeader
 				id="objectHeader"
 				title="{Location}"
@@ -46,7 +47,15 @@
 				growing="true"
 				growingScrollToLoad="true"
 				updateFinished="onUpdateFinished">
-
+				<headerToolbar>
+					<Toolbar>
+						<Button 
+							id="refresh"
+							icon="sap-icon://refresh" 
+							tooltip="Refresh"
+							press="onRefresh"/>
+					</Toolbar>
+				</headerToolbar>
 				<columns>
 					<Column id="ParticipantName">
 						<Text text="{i18n>detailLineItemTableParticipantName}"/>
