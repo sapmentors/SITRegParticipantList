@@ -4,6 +4,22 @@ sap.ui.define([
 
 		return {
 
+			eventValue : function (sValue) {
+				
+				var sResult = new sap.ui.model.type.String();
+				
+				if (sValue === "Y") {
+					sResult = "Yes";
+				}
+				else if(sValue === "N"){
+					sResult = "No";
+				}
+				else if(sValue === "M" || sValue === null){
+					sResult = "Maybe";
+				}
+				return sResult;
+				
+			},
 			/**
 			 * Rounds the number unit value to 2 digits
 			 * @public
