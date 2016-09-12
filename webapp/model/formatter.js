@@ -4,21 +4,34 @@ sap.ui.define([
 
 		return {
 
+			/**
+			 * convert Preevening and Posteveningevent value 
+			 * Y --> Yes
+			 * N --> No
+			 * M --> Maybe
+			 * W --> Waiting liest
+			 * @public
+			 * @param {string} sValue value to be formatted
+			 * @returns {string} true or false
+			 */
 			eventValue : function (sValue) {
-				
-				var sResult = new sap.ui.model.type.String();
+				var oResourceBundle = this.getModel("i18n").getResourceBundle();
+				var sResult = "";
 				
 				if (sValue === "Y") {
-					sResult = "Yes";
+					sResult = "yes";
 				}
 				else if(sValue === "N"){
-					sResult = "No";
+					sResult = "no";
 				}
 				else if(sValue === "M" || sValue === null){
-					sResult = "Maybe";
+					sResult = "maybe";
 				}
-				return sResult;
-				
+				else if(sValue === "W"){
+					sResult = "waitinglist";
+				}
+				return oResourceBundle.getText(sResult);
+
 			},
 			/**
 			 * Rounds the number unit value to 2 digits
