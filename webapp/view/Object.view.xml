@@ -36,6 +36,10 @@
 					path: 'RSVP',
 					operator: 'EQ',
 					value1: 'Y'
+				},{
+					path: 'RSVP',
+					operator: 'EQ',
+					value1: 'W'
 				}],
 				sorter: {
 						path: 'RegistrationTime',
