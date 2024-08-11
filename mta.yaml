@@ -1,6 +1,6 @@
 _schema-version: "2.0.0"
 ID: "com.sap.sapmentors.sitreg.participantlist"
-version: 0.0.1
+version: 1.1.0
 
 parameters:
   hcp-deployer-version: "1.0.0"
@@ -10,7 +10,7 @@ modules:
     type: html5
     path: .
     parameters:
-       version: 0.1.0-${timestamp}
+      version: 1.1.0-${timestamp}
     build-parameters:
       builder: npm
       build-result: dist

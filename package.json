@@ -1,6 +1,6 @@
 {
   "name": "sitregparticipantlist",
-  "version": "0.0.2",
+  "version": "1.1.0",
   "description": "SAP Event Registration - Participant List",
   "private": false,
   "repository": {
@@ -8,13 +8,14 @@
     "url": "https://github.com/sapmentors/SITRegParticipantList.git"
   },
   "scripts": {
-    "build": "ui5 build --include-task=generateManifestBundle generateCachebusterInfo"
+    "build": "ui5 build --include-task=generateManifestBundle generateCachebusterInfo && cp neo-app.json dist",
+    "build:local:neo": "/Users/gwolf/Downloads/sapjvm_8/bin/java -jar /Users/gwolf/Downloads/mta_archive_builder-1.1.20.jar --build-target=NEO --mtar mta_archives/sitregparticipantlist.mtar build"
   },
   "author": "SAP Mentors",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@ui5/cli": "^2.6.6",
-    "@sap/ui5-builder-webide-extension": "^1.1.0"
+    "@ui5/cli": "^3.11.1",
+    "@sap/ui5-builder-webide-extension": "^1.1.9"
   },
   "ui5": {
     "dependencies": [
